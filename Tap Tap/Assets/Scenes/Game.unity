@@ -221,6 +221,51 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 15}
   m_SizeDelta: {x: 348.4, y: 75}
   m_Pivot: {x: 0.5, y: 0}
+--- !u!1 &13793076
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 13793078}
+  - component: {fileID: 13793077}
+  m_Layer: 0
+  m_Name: Constant Number Of Enemys Mode
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &13793077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13793076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baaac19817d62a74997dcbd3abd2a2c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stage: {fileID: 580020178}
+--- !u!4 &13793078
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13793076}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 580020180}
+  m_Father: {fileID: 476808288}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &20259707
 GameObject:
   m_ObjectHideFlags: 0
@@ -10955,7 +11000,7 @@ Transform:
   m_Children:
   - {fileID: 936458390}
   m_Father: {fileID: 476808288}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &252706755
 MonoBehaviour:
@@ -16918,6 +16963,7 @@ Transform:
   m_Children:
   - {fileID: 1575445388}
   - {fileID: 1364974056}
+  - {fileID: 13793078}
   - {fileID: 2026547853}
   - {fileID: 1760035253}
   - {fileID: 252706754}
@@ -16942,6 +16988,7 @@ MonoBehaviour:
   stageController:
   - {fileID: 1575445387}
   - {fileID: 1364974054}
+  - {fileID: 13793076}
   - {fileID: 2026547851}
   - {fileID: 1760035251}
   - {fileID: 252706753}
@@ -17133,15 +17180,26 @@ MonoBehaviour:
     chanceToSpawn: 98
   - enemy: {fileID: 3281439160021067358, guid: 2d26d6813d7fe254490af438928b908f, type: 3}
     chanceToSpawn: 2
-  amountChances:
+  amountOfEnemysChances:
   - amount: 1
-    chance: 70
+    chance: 60
   - amount: 2
-    chance: 25
+    chance: 20
   - amount: 3
-    chance: 5
+    chance: 10
+  - amount: 4
+    chance: 10
   timeBetweenEnemys: 0
   isEndless: 1
+  amountOfWavesChances:
+  - amount: 2
+    chance: 50
+  - amount: 3
+    chance: 25
+  - amount: 4
+    chance: 25
+  - amount: 10
+    chance: 10
 --- !u!1 &499219026
 GameObject:
   m_ObjectHideFlags: 0
@@ -17198,15 +17256,10 @@ MonoBehaviour:
     chanceToSpawn: 1
   - enemy: {fileID: 7550616134950662651, guid: 71414e4df49509142aaf3641ddc65873, type: 3}
     chanceToSpawn: 1
-  amountChances:
-  - amount: 1
-    chance: 80
-  - amount: 2
-    chance: 200
-  - amount: 3
-    chance: 200
+  amountOfEnemysChances: []
   timeBetweenEnemys: 0
   isEndless: 1
+  amountOfWavesChances: []
 --- !u!1 &507908561
 GameObject:
   m_ObjectHideFlags: 0
@@ -17362,6 +17415,62 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1083465702}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &580020178
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 580020180}
+  - component: {fileID: 580020179}
+  m_Layer: 0
+  m_Name: Constant Number Of Enemys Stage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &580020179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580020178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae61df9a1e50dae42afa78116d1b5071, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemys:
+  - enemy: {fileID: 3281439160021067358, guid: fcee4adf7d72d2748b85adde1994233b, type: 3}
+    chanceToSpawn: 98
+  - enemy: {fileID: 3281439160021067358, guid: 2d26d6813d7fe254490af438928b908f, type: 3}
+    chanceToSpawn: 2
+  isEndless: 1
+  minNumberOfEnemysTillOver: 10
+  maxNumberOfEnemysTillOver: 30
+  amountOfConstantEnemysChances:
+  - amount: 2
+    chance: 50
+  - amount: 3
+    chance: 50
+--- !u!4 &580020180
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580020178}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.6626137, y: 0.5847075, z: 3.6786268}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 13793078}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &585962578
@@ -17520,7 +17629,7 @@ Transform:
   m_Children:
   - {fileID: 499219027}
   m_Father: {fileID: 476808288}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &637402503
 MonoBehaviour:
@@ -23961,11 +24070,10 @@ MonoBehaviour:
     chanceToSpawn: 1
   - enemy: {fileID: 7550616134950662651, guid: 71414e4df49509142aaf3641ddc65873, type: 3}
     chanceToSpawn: 1
-  amountChances:
-  - amount: 1
-    chance: 1
+  amountOfEnemysChances: []
   timeBetweenEnemys: 2
   isEndless: 0
+  amountOfWavesChances: []
 --- !u!1 &1083465700
 GameObject:
   m_ObjectHideFlags: 0
@@ -24009,7 +24117,7 @@ Transform:
   m_Children:
   - {fileID: 547843820}
   m_Father: {fileID: 476808288}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1104546070
 GameObject:
@@ -24456,11 +24564,14 @@ MonoBehaviour:
     chanceToSpawn: 1
   - enemy: {fileID: 7550616134950662651, guid: 71414e4df49509142aaf3641ddc65873, type: 3}
     chanceToSpawn: 1
-  amountChances:
+  amountOfEnemysChances:
   - amount: 1
-    chance: 1
+    chance: 100
   timeBetweenEnemys: 0
   isEndless: 0
+  amountOfWavesChances:
+  - amount: 1
+    chance: 1
 --- !u!1 &1152294580
 GameObject:
   m_ObjectHideFlags: 0
@@ -31068,11 +31179,14 @@ MonoBehaviour:
   enemys:
   - enemy: {fileID: 3281439160021067358, guid: fcee4adf7d72d2748b85adde1994233b, type: 3}
     chanceToSpawn: 1
-  amountChances:
+  amountOfEnemysChances:
   - amount: 5
     chance: 1
   timeBetweenEnemys: 0
   isEndless: 0
+  amountOfWavesChances:
+  - amount: 1
+    chance: 1
 --- !u!1 &1632773898
 GameObject:
   m_ObjectHideFlags: 0
@@ -31643,17 +31757,10 @@ MonoBehaviour:
   enemys:
   - enemy: {fileID: 3281439160021067358, guid: fcee4adf7d72d2748b85adde1994233b, type: 3}
     chanceToSpawn: 1
-  amountChances:
-  - amount: 10
-    chance: 1
-  - amount: 20
-    chance: 1
-  - amount: 30
-    chance: 1
-  - amount: 40
-    chance: 1
+  amountOfEnemysChances: []
   timeBetweenEnemys: 1.5
   isEndless: 1
+  amountOfWavesChances: []
 --- !u!1 &1760035251
 GameObject:
   m_ObjectHideFlags: 0
@@ -31697,7 +31804,7 @@ Transform:
   m_Children:
   - {fileID: 1537424042}
   m_Father: {fileID: 476808288}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1764803756
 GameObject:
@@ -42619,7 +42726,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 476808288}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2070860129
 GameObject:
@@ -42826,11 +42933,10 @@ MonoBehaviour:
     chanceToSpawn: 1
   - enemy: {fileID: 7550616134950662651, guid: 71414e4df49509142aaf3641ddc65873, type: 3}
     chanceToSpawn: 1
-  amountChances:
-  - amount: 1
-    chance: 1
+  amountOfEnemysChances: []
   timeBetweenEnemys: 2
   isEndless: 1
+  amountOfWavesChances: []
 --- !u!4 &2078697819
 Transform:
   m_ObjectHideFlags: 0
@@ -42888,7 +42994,7 @@ Transform:
   m_Children:
   - {fileID: 1754370049}
   m_Father: {fileID: 476808288}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2120329931
 GameObject:
