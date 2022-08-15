@@ -41,6 +41,11 @@ public class TouchInputManager : MonoBehaviour
         isRecognizingTouches = false;
     }
 
+    public void ToggleAllowedToMiss(bool allowedToMiss)
+    {
+        this.allowedToMiss = allowedToMiss;
+    }
+
     // Update is called once per frame
     void Update()
     {
