@@ -84,17 +84,17 @@ public class EnemySpawnFunctions : MonoBehaviour
         return spawnPos;
     }
 
-    public void SpawnRandomEnemy(EnemyEntry[] enemys, AmountOfEnemysChance[] amountChances)
+    public void SpawnRandomEnemy(EnemyEntry[] enemys, AmountChances[] amountChances)
     {
         SpawnRandomEnemy(enemys, SelectRandomAmount(amountChances));
     }
 
-    public int SelectRandomAmount(AmountOfEnemysChance[] amountChances)
+    public int SelectRandomAmount(AmountChances[] amountChances)
     {
         float randomAmountChance = Random.Range(0, GetChanceSum(amountChances));
 
         float currentAmountChance = 0;
-        foreach (AmountOfEnemysChance a in amountChances)
+        foreach (AmountChances a in amountChances)
         {
             currentAmountChance += a.chance;
             if (currentAmountChance >= randomAmountChance)
@@ -195,10 +195,10 @@ public class EnemySpawnFunctions : MonoBehaviour
         return chanceSum;
     }
 
-    private float GetChanceSum(AmountOfEnemysChance[] amountChances)
+    private float GetChanceSum(AmountChances[] amountChances)
     {
         float chanceSum = 0;
-        foreach (AmountOfEnemysChance e in amountChances)
+        foreach (AmountChances e in amountChances)
         {
             chanceSum += e.chance;
         }
