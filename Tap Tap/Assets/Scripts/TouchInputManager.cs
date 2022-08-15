@@ -17,7 +17,9 @@ public class TouchInputManager : MonoBehaviour
     private GameManager gameManager;
     private EnemySpawnFunctions enemySpawnFunctions;
 
-    private bool allowedToMiss = false;
+    private bool allowedToMiss = true;
+
+    [SerializeField] private GameObject tapParticle;
 
     // Start is called before the first frame update
     void Start()
@@ -56,6 +58,11 @@ public class TouchInputManager : MonoBehaviour
             Vector2 touchPosWorld2D = new Vector2(touchPosWorld.x, touchPosWorld.y);
             RaycastHit2D hitInformation = Physics2D.Raycast(touchPosWorld2D, Camera.main.transform.forward);
 
+            if(touch.phase == TouchPhase.Began)
+            {
+                Instantiate(tapParticle, new Vector3(touchPosWorld2D.x, touchPosWorld2D.y, 10), Quaternion.identity);
+            }
+
             if (hitInformation.collider != null)
             {
                 GameObject touchedObject = hitInformation.transform.gameObject;
@@ -83,10 +90,9 @@ public class TouchInputManager : MonoBehaviour
             else if(!allowedToMiss)
             {
                 //Missed
-                if (enemySpawnFunctions.CheckIfPointIsInSpawnField(touchPosWorld2D))
+                if (touch.phase == TouchPhase.Began && enemySpawnFunctions.CheckIfPointIsInSpawnField(touchPosWorld2D))
                 {
                     gameManager.GameOver();
-                    Debug.Log("You Missed");
                 }
             }
         }
