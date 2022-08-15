@@ -12,12 +12,31 @@ public class TouchInputManager : MonoBehaviour
     private ArrayList currentFrameTouchingObjects = new ArrayList();
     private ArrayList holdingTouchingObjects = new ArrayList();
 
-    private bool isRecognizingTouches = true;
+    private bool isRecognizingTouches;
+
+    private GameManager gameManager;
+    private EnemySpawnFunctions enemySpawnFunctions;
+
+    private bool allowedToMiss = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = GameObject.FindObjectOfType<GameManager>();
+        enemySpawnFunctions = GameObject.FindObjectOfType<EnemySpawnFunctions>();
+
         touchingObjectsText.SetText("");
+    }
+
+    public void StartRecognizingTouches()
+    {
+        holdingTouchingObjects.Clear();
+        isRecognizingTouches = true;
+    }
+
+    public void StopRecognizingTouches()
+    {
+        isRecognizingTouches = false;
     }
 
     // Update is called once per frame
@@ -61,9 +80,14 @@ public class TouchInputManager : MonoBehaviour
                     }
                 }
             }
-            else
+            else if(!allowedToMiss)
             {
-
+                //Missed
+                if (enemySpawnFunctions.CheckIfPointIsInSpawnField(touchPosWorld2D))
+                {
+                    gameManager.GameOver();
+                    Debug.Log("You Missed");
+                }
             }
         }
 

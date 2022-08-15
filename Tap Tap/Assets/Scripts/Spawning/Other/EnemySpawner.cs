@@ -20,11 +20,14 @@ public class EnemySpawner : MonoBehaviour
     private TutorialManager tutorialManager;
     private GameManager gameManager;
 
+    private TouchInputManager touchInputManager;
+
     // Start is called before the first frame update
     void Start()
     {
         tutorialManager = GameObject.FindObjectOfType<TutorialManager>();
         gameManager = GameObject.FindObjectOfType<GameManager>();
+        touchInputManager = GameObject.FindObjectOfType<TouchInputManager>();
 
         currentStageController = stageController[0].GetComponent<IStageController>();
         currentModeName = stageController[0].name;
@@ -109,11 +112,13 @@ public class EnemySpawner : MonoBehaviour
         {
             isSpawning = true;
         }
+        touchInputManager.StartRecognizingTouches();
     }
 
     public void StopSpawning()
     {
         isSpawning = false;
+        touchInputManager.StopRecognizingTouches();
     }
 
     public void StartSpawner()
@@ -121,5 +126,7 @@ public class EnemySpawner : MonoBehaviour
         currentStageController.Reset();
         ChangeStage();
         isSpawning = true;
+
+        touchInputManager.StartRecognizingTouches();
     }
 }

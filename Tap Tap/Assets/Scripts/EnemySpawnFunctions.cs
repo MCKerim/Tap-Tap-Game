@@ -62,8 +62,12 @@ public class EnemySpawnFunctions : MonoBehaviour
     }
 #endif
 
-    private int maxTrysToFindPos = 10000;
+    public bool CheckIfPointIsInSpawnField(Vector2 point)
+    {
+        return point.x >= borderLeft && point.x <= borderRight && point.y >= borderBottom && point.y <= borderTop;
+    }
 
+    private int maxTrysToFindPos = 10000;
     public Vector3 GetRandomSpawnPos(GameObject type)
     {
         //Debug
@@ -71,7 +75,7 @@ public class EnemySpawnFunctions : MonoBehaviour
         scale = type.transform.localScale * 1.2f;
 
         Vector3 spawnPos;
-
+ 
         int currentTrys = 0;
         do
         {
