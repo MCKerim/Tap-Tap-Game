@@ -51,7 +51,7 @@ public class NumberEnemy : Enemy, ITouchInput
         }
         else
         {
-            GameObject.FindObjectOfType<GameManager>().GameOver();
+            GameObject.FindObjectOfType<GameManager>().GameOver(GameOverInfoTextType.NumberEnemyClickedInWrongOrder);
         }
     }
 

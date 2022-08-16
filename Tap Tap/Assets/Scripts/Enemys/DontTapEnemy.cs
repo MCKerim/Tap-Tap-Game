@@ -38,7 +38,7 @@ public class DontTapEnemy : Enemy, ITouchInput
     {
         if (!livesEndless)
         {
-            TriggerGameOver();
+            GameObject.FindObjectOfType<GameManager>().GameOver(GameOverInfoTextType.DontTapEnemyClicked);
         }
     }
 

@@ -86,8 +86,7 @@ public class EnemySpawner : MonoBehaviour
     {
         if (currentStageController.IsOver())
         {
-            gameManager.GameOver();
-            Debug.Log("Stage Completed.");
+            gameManager.GameOver(GameOverInfoTextType.Winning);
         }
         else
         {
@@ -123,10 +122,9 @@ public class EnemySpawner : MonoBehaviour
 
     public void StartSpawner()
     {
+        touchInputManager.StartRecognizingTouches();
         currentStageController.Reset();
         ChangeStage();
         isSpawning = true;
-
-        touchInputManager.StartRecognizingTouches();
     }
 }

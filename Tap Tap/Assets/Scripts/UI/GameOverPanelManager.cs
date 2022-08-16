@@ -13,12 +13,23 @@ public class GameOverPanelManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI currentModeText;
 
+    [SerializeField] private TextMeshProUGUI gameOverInfoText;
+
     [SerializeField] private Color defaultColor;
     [SerializeField] private Color highscoreColor;
+
+    [SerializeField] private Color gameOverInfoTextDefaultColor;
 
     private ScoreManager scoreManager;
 
     private EnemySpawner enemySpawner;
+
+    [SerializeField] private string[] enemyNotClickedTexts;
+    [SerializeField] private string[] dontTapEnemyClickedTexts;
+    [SerializeField] private string[] numberEnemyClickedInWrongOrderTexts;
+    [SerializeField] private string[] enemyMissedTexts;
+    [SerializeField] private string[] reactionBossEnemyClickedTexts;
+    [SerializeField] private string[] winningTexts;
 
     // Start is called before the first frame update
     void Start()
@@ -64,5 +75,56 @@ public class GameOverPanelManager : MonoBehaviour
         //DEBUG PURPOSES
         GameObject d = GameObject.FindWithTag("DEBUG");
         d.GetComponent<SpriteRenderer>().enabled = false;
+    }
+
+    public void UpdateGameOverInfoText(GameOverInfoTextType type)
+    {
+        gameOverInfoText.color = gameOverInfoTextDefaultColor;
+        switch (type)
+        {
+            case GameOverInfoTextType.EnemyNotClicked:
+                SelectRandomGameOverInfoText(enemyNotClickedTexts);
+                break;
+
+            case GameOverInfoTextType.DontTapEnemyClicked:
+                SelectRandomGameOverInfoText(dontTapEnemyClickedTexts);
+                break;
+
+            case GameOverInfoTextType.NumberEnemyClickedInWrongOrder:
+                SelectRandomGameOverInfoText(numberEnemyClickedInWrongOrderTexts);
+                break;
+
+            case GameOverInfoTextType.EnemyMissed:
+                SelectRandomGameOverInfoText(enemyMissedTexts);
+                break;
+
+            case GameOverInfoTextType.ReactionBossEnemyClicked:
+                SelectRandomGameOverInfoText(reactionBossEnemyClickedTexts);
+                break;
+
+            case GameOverInfoTextType.Winning:
+                gameOverInfoText.color = highscoreColor;
+                SelectRandomGameOverInfoText(winningTexts);
+                break;
+
+            default:
+                gameOverInfoText.SetText("");
+                break;
+        }
+    }
+
+    private void SelectRandomGameOverInfoText(string[] texts)
+    {
+        if(texts.Length == 0)
+        {
+            gameOverInfoText.SetText("");
+            Debug.Log("No Game Over texts for that scenario");
+        }
+        else
+        {
+            int randomText = Random.Range(0, texts.Length);
+            gameOverInfoText.SetText(texts[randomText]);
+        }
+        
     }
 }

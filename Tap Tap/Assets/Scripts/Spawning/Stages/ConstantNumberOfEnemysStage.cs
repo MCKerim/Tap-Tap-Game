@@ -29,9 +29,6 @@ public class ConstantNumberOfEnemysStage : MonoBehaviour, IStage
         }
         amountOfConstantEnemys = enemySpawnFunctions.SelectRandomAmount(amountOfConstantEnemysChances);
         isOver = false;
-
-        Debug.Log("Amount Constant enemys: " + amountOfConstantEnemys);
-        Debug.Log("numberOfEnemysTillOver: " + numberOfEnemysTillOver);
     }
 
     public bool IsOver()

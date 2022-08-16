@@ -97,7 +97,7 @@ public class TouchInputManager : MonoBehaviour
                 //Missed
                 if (touch.phase == TouchPhase.Began && enemySpawnFunctions.CheckIfPointIsInSpawnField(touchPosWorld2D))
                 {
-                    gameManager.GameOver();
+                    gameManager.GameOver(GameOverInfoTextType.EnemyMissed);
                 }
             }
         }

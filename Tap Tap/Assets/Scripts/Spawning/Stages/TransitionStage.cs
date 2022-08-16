@@ -26,12 +26,11 @@ public class TransitionStage : MonoBehaviour, IStage
     private bool animationIsPlaying;
     private bool isOver;
 
+    private TouchInputManager touchInputManager;
+
     private void Start()
     {
-        if (playTransitionAnimation)
-        {
-            secondsToWait = waitTillTextTravelStarts + textTravelTime + waitTextTravelStand + textFadeOutTime + waitOnBlankStage;
-        }
+        touchInputManager = GameObject.FindObjectOfType<TouchInputManager>();
     }
 
     public bool IsOver()
@@ -70,11 +69,13 @@ public class TransitionStage : MonoBehaviour, IStage
                 transitionText.gameObject.SetActive(false);
                 transitionPanel.gameObject.SetActive(false);
             }
+            touchInputManager.StartRecognizingTouches();
             isOver = true;
         }
 
         if(playTransitionAnimation && !animationIsPlaying)
         {
+            touchInputManager.StopRecognizingTouches();
             PlayTransitionAnimation();
         }
     }

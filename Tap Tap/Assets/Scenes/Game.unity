@@ -5253,6 +5253,7 @@ RectTransform:
   - {fileID: 1416223414}
   - {fileID: 348110347}
   - {fileID: 1637511267}
+  - {fileID: 1095919243}
   - {fileID: 828402567}
   - {fileID: 1262688640}
   - {fileID: 1937577059}
@@ -11323,7 +11324,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10
+  m_text: 100
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 072d1916b6e923240a1d73bfed3a7e77, type: 2}
   m_sharedMaterial: {fileID: 5143448648131644581, guid: 072d1916b6e923240a1d73bfed3a7e77, type: 2}
@@ -11350,7 +11351,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 300
+  m_fontSize: 283.65
   m_fontSizeBase: 300
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -11417,7 +11418,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -100, y: 350}
+  m_SizeDelta: {x: -100, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &368487191
 GameObject:
@@ -17332,7 +17333,9 @@ MonoBehaviour:
     chanceToSpawn: 1
   - enemy: {fileID: 7550616134950662651, guid: 71414e4df49509142aaf3641ddc65873, type: 3}
     chanceToSpawn: 1
-  amountOfEnemysChances: []
+  amountOfEnemysChances:
+  - amount: 1
+    chance: 1
   timeBetweenEnemys: 0
   isEndless: 1
   amountOfWavesChances: []
@@ -18652,7 +18655,7 @@ RectTransform:
   m_Children:
   - {fileID: 479380434}
   m_Father: {fileID: 82434194}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -24161,8 +24164,38 @@ MonoBehaviour:
   scoreText: {fileID: 348110345}
   highscoreText: {fileID: 1637511265}
   currentModeText: {fileID: 1416223412}
+  gameOverInfoText: {fileID: 1095919244}
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
   highscoreColor: {r: 0.40945962, g: 1, b: 0.3820755, a: 1}
+  gameOverInfoTextDefaultColor: {r: 1, g: 0.27058825, b: 0.27058825, a: 1}
+  enemyNotClickedTexts:
+  - You have to get FASTER!
+  - You did not get them all
+  - Too slow!
+  - You can do better than this
+  dontTapEnemyClickedTexts:
+  - Don't TAP on RED!
+  - I said red is forbidden
+  - Don't you understand that red is not allowed to Tap?
+  numberEnemyClickedInWrongOrderTexts:
+  - You must tap in the correct order.
+  - can't you count?
+  - A first grader can count better
+  - I thought you were smarter
+  enemyMissedTexts:
+  - Missed!
+  - Hit better!
+  - Aim better
+  reactionBossEnemyClickedTexts:
+  - Tap at the right time
+  - Don't TAP on RED!
+  - Your reaction is poor
+  - You never make the boss
+  winningTexts:
+  - YOU WON!
+  - Really good
+  - Good Job!
+  - You are a winner!
 --- !u!4 &1035968944
 Transform:
   m_ObjectHideFlags: 0
@@ -24225,10 +24258,14 @@ MonoBehaviour:
     chanceToSpawn: 1
   - enemy: {fileID: 7550616134950662651, guid: 71414e4df49509142aaf3641ddc65873, type: 3}
     chanceToSpawn: 1
-  amountOfEnemysChances: []
+  amountOfEnemysChances:
+  - amount: 1
+    chance: 1
   timeBetweenEnemys: 2
   isEndless: 0
-  amountOfWavesChances: []
+  amountOfWavesChances:
+  - amount: 1
+    chance: 1
 --- !u!1 &1083465700
 GameObject:
   m_ObjectHideFlags: 0
@@ -24274,6 +24311,140 @@ Transform:
   m_Father: {fileID: 476808288}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1095919242
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1095919243}
+  - component: {fileID: 1095919245}
+  - component: {fileID: 1095919244}
+  m_Layer: 0
+  m_Name: Game Over Info Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1095919243
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095919242}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 82434194}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -205}
+  m_SizeDelta: {x: 750, y: 80}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1095919244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095919242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Don't TAP on RED
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 072d1916b6e923240a1d73bfed3a7e77, type: 2}
+  m_sharedMaterial: {fileID: 5143448648131644581, guid: 072d1916b6e923240a1d73bfed3a7e77, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4282729983
+  m_fontColor: {r: 1, g: 0.27058825, b: 0.27058825, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 75.65
+  m_fontSizeBase: 80
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 18
+  m_fontSizeMax: 80
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 0
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1095919245
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095919242}
+  m_CullTransparentMesh: 1
 --- !u!1 &1104546070
 GameObject:
   m_ObjectHideFlags: 0
@@ -24906,7 +25077,7 @@ RectTransform:
   m_Children:
   - {fileID: 1127875772}
   m_Father: {fileID: 82434194}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -31463,12 +31634,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 80
+  m_fontSize: 75.65
   m_fontSizeBase: 80
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 80
   m_fontStyle: 16
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -31530,7 +31701,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -125}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 750, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1687258581
 GameObject:
@@ -31989,7 +32160,13 @@ MonoBehaviour:
   enemys:
   - enemy: {fileID: 3281439160021067358, guid: fcee4adf7d72d2748b85adde1994233b, type: 3}
     chanceToSpawn: 1
-  amountOfEnemysChances: []
+  amountOfEnemysChances:
+  - amount: 10
+    chance: 1
+  - amount: 20
+    chance: 1
+  - amount: 30
+    chance: 1
   timeBetweenEnemys: 1.5
   isEndless: 1
   amountOfWavesChances: []
@@ -37586,7 +37763,7 @@ RectTransform:
   m_Children:
   - {fileID: 155900843}
   m_Father: {fileID: 82434194}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -43165,7 +43342,9 @@ MonoBehaviour:
     chanceToSpawn: 1
   - enemy: {fileID: 7550616134950662651, guid: 71414e4df49509142aaf3641ddc65873, type: 3}
     chanceToSpawn: 1
-  amountOfEnemysChances: []
+  amountOfEnemysChances:
+  - amount: 1
+    chance: 1
   timeBetweenEnemys: 2
   isEndless: 1
   amountOfWavesChances: []
@@ -43439,7 +43618,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 50, y: 173}
+  m_AnchoredPosition: {x: 50, y: 162.5}
   m_SizeDelta: {x: 300, y: 75}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &2137906957

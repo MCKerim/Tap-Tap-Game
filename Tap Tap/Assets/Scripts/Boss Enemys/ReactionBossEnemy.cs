@@ -45,11 +45,7 @@ public class ReactionBossEnemy : Enemy, ITouchInput
     private float currentTimeInsideReaction;
     private bool isInReaction;
 
-    
-
     [SerializeField] private TextMeshProUGUI numberText;
-
-
 
     private void Update()
     {
@@ -89,7 +85,7 @@ public class ReactionBossEnemy : Enemy, ITouchInput
     {
         if (!isInReaction)
         {
-            TriggerGameOver();
+            GameObject.FindObjectOfType<GameManager>().GameOver(GameOverInfoTextType.ReactionBossEnemyClicked);
             return;
         }
 

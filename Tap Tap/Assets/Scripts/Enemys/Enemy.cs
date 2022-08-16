@@ -97,7 +97,7 @@ public class Enemy : MonoBehaviour
         d.GetComponent<SpriteRenderer>().enabled = true;
         d.transform.position = transform.position;
         */
-        GameObject.FindObjectOfType<GameManager>().GameOver();
+        GameObject.FindObjectOfType<GameManager>().GameOver(GameOverInfoTextType.EnemyNotClicked);
     }
 
     public void RotateOnZ()

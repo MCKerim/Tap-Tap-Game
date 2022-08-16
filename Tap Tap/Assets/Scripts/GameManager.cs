@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
         this.cannotLooseGame = cannotLooseGame;
     }
 
-    public void GameOver()
+    public void GameOver(GameOverInfoTextType type)
     {
         if (cannotLooseGame)
         {
@@ -67,6 +67,8 @@ public class GameManager : MonoBehaviour
         }
 
         gameOverPanelManager.ShowGameOverPanel();
+        gameOverPanelManager.UpdateGameOverInfoText(type);
+
         gameUIPanelManager.HideGameUIPanel();
         scoreManager.CheckAndSaveHighscore();
         enemySpawner.StopSpawning();

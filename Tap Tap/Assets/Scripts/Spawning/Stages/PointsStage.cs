@@ -41,7 +41,6 @@ public class PointsStage : MonoBehaviour, IStage
             return scoreManager.GetCurrentScore() > endScore;
         }
     }
-       
 
     public void UpdateStage()
     {
