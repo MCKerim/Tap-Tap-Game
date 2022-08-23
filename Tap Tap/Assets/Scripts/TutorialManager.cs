@@ -16,11 +16,15 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private TutorialTextManager tutorialTextManager;
     [HideInInspector] public bool isPlayingTutorial;
 
+    private TouchInputManager touchInputManager;
+
     // Start is called before the first frame update
     void Start()
     {
         enemySpawner = GameObject.FindObjectOfType<EnemySpawner>();
         circleScale = tutorialCircle.transform.localScale;
+
+        touchInputManager = GameObject.FindObjectOfType<TouchInputManager>();
     }
 
     public void ResetTutorialProgress()
@@ -55,6 +59,8 @@ public class TutorialManager : MonoBehaviour
     {
         isPlayingTutorial = true;
         enemySpawner.StopSpawning();
+        touchInputManager.SetCurrentlyAllowedToMissTrue();
+
         foreach (Enemy e in GameObject.FindObjectsOfType<Enemy>())
         {
             e.livesEndless = true;
@@ -88,5 +94,6 @@ public class TutorialManager : MonoBehaviour
         tutorialPanel.SetActive(false);
         isPlayingTutorial = false;
         LeanTween.delayedCall(0.5f, enemySpawner.ResumeSpawning);
+        touchInputManager.ResetCurrentlyAllowedToMiss();
     }
 }

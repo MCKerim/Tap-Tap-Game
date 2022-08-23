@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         scoreManager.Reset();
+        touchInputManager.StartRecognizingTouches();
         LeanTween.delayedCall(1f, enemySpawner.StartSpawner);
     }
 
@@ -72,6 +73,7 @@ public class GameManager : MonoBehaviour
         gameUIPanelManager.HideGameUIPanel();
         scoreManager.CheckAndSaveHighscore();
         enemySpawner.StopSpawning();
+        touchInputManager.StopRecognizingTouches();
         enemySpawner.DestroyAllEnemys();
     }
 
@@ -89,7 +91,7 @@ public class GameManager : MonoBehaviour
         {
             isPaused = true;
             enemySpawner.StopSpawning();
-            touchInputManager.Pause();
+            touchInputManager.StopRecognizingTouches();
             pausePanelManager.ShowPausePanel();
             gameUIPanelManager.HideGameUIPanel();
             Time.timeScale = 0;
@@ -127,7 +129,7 @@ public class GameManager : MonoBehaviour
         }
 
         enemySpawner.ResumeSpawning();
-        touchInputManager.Resume();
+        touchInputManager.StartRecognizingTouches();
         pausePanelManager.HidePausePanel();
         gameUIPanelManager.ShowGameUIPanel();
         Time.timeScale = 1;

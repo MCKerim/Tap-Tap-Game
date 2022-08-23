@@ -18,6 +18,7 @@ public class TouchInputManager : MonoBehaviour
     private EnemySpawnFunctions enemySpawnFunctions;
 
     private bool allowedToMiss = true;
+    private bool currentlyAllowedToMiss;
 
     [SerializeField] private GameObject tapParticle;
 
@@ -28,6 +29,8 @@ public class TouchInputManager : MonoBehaviour
         enemySpawnFunctions = GameObject.FindObjectOfType<EnemySpawnFunctions>();
 
         touchingObjectsText.SetText("");
+
+        ResetCurrentlyAllowedToMiss();
     }
 
     public void StartRecognizingTouches()
@@ -41,9 +44,17 @@ public class TouchInputManager : MonoBehaviour
         isRecognizingTouches = false;
     }
 
-    public void ToggleAllowedToMiss(bool allowedToMiss)
-    {
-        this.allowedToMiss = allowedToMiss;
+    public void SetCurrentlyAllowedToMissTrue(){
+        currentlyAllowedToMiss = true;
+    }
+
+    public void ResetCurrentlyAllowedToMiss(){
+        currentlyAllowedToMiss = allowedToMiss;
+    }
+
+    public void SetAllowedToMiss(bool isAllowedToMiss){
+        allowedToMiss = isAllowedToMiss;
+        ResetCurrentlyAllowedToMiss();
     }
 
     // Update is called once per frame
@@ -92,7 +103,7 @@ public class TouchInputManager : MonoBehaviour
                     }
                 }
             }
-            else if(!allowedToMiss)
+            else if(!currentlyAllowedToMiss)
             {
                 //Missed
                 if (touch.phase == TouchPhase.Began && enemySpawnFunctions.CheckIfPointIsInSpawnField(touchPosWorld2D))
@@ -130,15 +141,5 @@ public class TouchInputManager : MonoBehaviour
         }
 
         touchingObjectsText.SetText("Touching: " + currentFrameTouchingObjects.Count + " Holding: " + holdingTouchingObjects.Count);
-    }
-
-    public void Pause()
-    {
-        isRecognizingTouches = false;
-    }
-
-    public void Resume()
-    {
-        isRecognizingTouches = true;
     }
 }
