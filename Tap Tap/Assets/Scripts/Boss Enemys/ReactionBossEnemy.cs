@@ -99,7 +99,7 @@ public class ReactionBossEnemy : Enemy, ITouchInput
             return;
         }
 
-        lives -= 1;
+        lives -= 10;
 
         numberText.SetText((int) currentTimeInsideReaction + "," + (int) ((currentTimeInsideReaction - (int) currentTimeInsideReaction) * 1000));
         healthBar.SetValue(lives);

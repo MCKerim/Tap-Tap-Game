@@ -363,7 +363,7 @@ MonoBehaviour:
   livesEndless: 0
   deathParticle: {fileID: 4560932426787093552, guid: b83336519ed74264991193e4ddd4c380, type: 3}
   healthBar: {fileID: 3581292401334815736}
-  lives: 3
+  lives: 30
   looseLiveParticle: {fileID: 4560932426787093552, guid: 65841ec1aeb07244a8011fffc558fc7c, type: 3}
   reactionModeColor: {r: 1, g: 1, b: 1, a: 1}
   minTimeTillNextReaction: 0.5
