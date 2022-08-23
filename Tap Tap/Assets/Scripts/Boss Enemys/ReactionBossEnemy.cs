@@ -45,11 +45,13 @@ public class ReactionBossEnemy : Enemy, ITouchInput
     private float currentTimeInsideReaction;
     private bool isInReaction;
 
+    [SerializeField] private float maxTimeInsideReaction;
+
     [SerializeField] private TextMeshProUGUI numberText;
 
     private void Update()
     {
-        base.Update();
+        //base.Update();
         if (isInReaction)
         {
             currentTimeInsideReaction += Time.deltaTime;
@@ -85,11 +87,19 @@ public class ReactionBossEnemy : Enemy, ITouchInput
     {
         if (!isInReaction)
         {
-            GameObject.FindObjectOfType<GameManager>().GameOver(GameOverInfoTextType.ReactionBossEnemyClicked);
+            GameObject.FindObjectOfType<GameManager>().GameOver(GameOverInfoTextType.ReactionBossEnemyClickedOnRed);
+            return;
+        }
+        else if(currentTimeInsideReaction >= maxTimeInsideReaction)
+        {
+            float timeTooSlow = currentTimeInsideReaction - maxTimeInsideReaction;
+            string timeTooSlowFormattet = ((int) timeTooSlow + "," + (int) ((timeTooSlow - (int) timeTooSlow) * 1000)) + "s";
+
+            GameObject.FindObjectOfType<GameManager>().GameOver("You were " + timeTooSlowFormattet + " too slow.");
             return;
         }
 
-        lives -= CalculateHitDamage();
+        lives -= 1;
 
         numberText.SetText((int) currentTimeInsideReaction + "," + (int) ((currentTimeInsideReaction - (int) currentTimeInsideReaction) * 1000));
         healthBar.SetValue(lives);
@@ -104,14 +114,14 @@ public class ReactionBossEnemy : Enemy, ITouchInput
         }
     }
 
-    [SerializeField] private int maxDamageOnHit;
+    /*[SerializeField] private int maxDamageOnHit;
     [SerializeField] private int minDamageOnHit;
 
     private int CalculateHitDamage()
     {
         int damage = (int) ((1 - Mathf.Clamp(currentTimeInsideReaction, 0, 1)) * (maxDamageOnHit - minDamageOnHit)) + minDamageOnHit;
         return damage;
-    }
+    }*/
 
     private void PlayHitAnimation()
     {

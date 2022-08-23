@@ -357,20 +357,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsOnDeath: 50
-  timeToKill: 10
+  timeToKill: 0
   rotationSpeed: 0
   isDead: 0
   livesEndless: 0
-  deathParticle: {fileID: 4560932426787093552, guid: f3105a887d7a65d409cf533334e7979d, type: 3}
+  deathParticle: {fileID: 4560932426787093552, guid: b83336519ed74264991193e4ddd4c380, type: 3}
   healthBar: {fileID: 3581292401334815736}
-  lives: 30
+  lives: 3
   looseLiveParticle: {fileID: 4560932426787093552, guid: 65841ec1aeb07244a8011fffc558fc7c, type: 3}
   reactionModeColor: {r: 1, g: 1, b: 1, a: 1}
   minTimeTillNextReaction: 0.5
   maxTimeTillNextReaction: 4
+  maxTimeInsideReaction: 0.35
   numberText: {fileID: 3264182728579365999}
-  maxDamageOnHit: 15
-  minDamageOnHit: 1
 --- !u!1 &8841630266269518955
 GameObject:
   m_ObjectHideFlags: 0

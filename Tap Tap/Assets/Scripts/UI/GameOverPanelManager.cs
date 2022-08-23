@@ -28,7 +28,8 @@ public class GameOverPanelManager : MonoBehaviour
     [SerializeField] private string[] dontTapEnemyClickedTexts;
     [SerializeField] private string[] numberEnemyClickedInWrongOrderTexts;
     [SerializeField] private string[] enemyMissedTexts;
-    [SerializeField] private string[] reactionBossEnemyClickedTexts;
+    [SerializeField] private string[] reactionBossEnemyClickedOnRedTexts;
+    [SerializeField] private string[] reactionBossEnemyClickedTooSlowTexts;
     [SerializeField] private string[] winningTexts;
 
     // Start is called before the first frame update
@@ -98,8 +99,12 @@ public class GameOverPanelManager : MonoBehaviour
                 SelectRandomGameOverInfoText(enemyMissedTexts);
                 break;
 
-            case GameOverInfoTextType.ReactionBossEnemyClicked:
-                SelectRandomGameOverInfoText(reactionBossEnemyClickedTexts);
+            case GameOverInfoTextType.ReactionBossEnemyClickedOnRed:
+                SelectRandomGameOverInfoText(reactionBossEnemyClickedOnRedTexts);
+                break;
+            
+            case GameOverInfoTextType.ReactionBossEnemyClickedTooSlow:
+                SelectRandomGameOverInfoText(reactionBossEnemyClickedTooSlowTexts);
                 break;
 
             case GameOverInfoTextType.Winning:
@@ -111,6 +116,12 @@ public class GameOverPanelManager : MonoBehaviour
                 gameOverInfoText.SetText("");
                 break;
         }
+    }
+
+    public void UpdateGameOverInfoText(string text)
+    {
+        gameOverInfoText.color = gameOverInfoTextDefaultColor;
+        gameOverInfoText.SetText(text);
     }
 
     private void SelectRandomGameOverInfoText(string[] texts)

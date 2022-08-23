@@ -24186,11 +24186,14 @@ MonoBehaviour:
   - Missed!
   - Hit better!
   - Aim better
-  reactionBossEnemyClickedTexts:
-  - Tap at the right time
-  - Don't TAP on RED!
-  - Your reaction is poor
-  - You never make the boss
+  reactionBossEnemyClickedOnRedTexts:
+  - You will never beat this boss!
+  - You will never beat this boss!
+  - This enemy is too strong
+  reactionBossEnemyClickedTooSlowTexts:
+  - Too slow!
+  - You need faster reactions!
+  - Maybie next time
   winningTexts:
   - YOU WON!
   - Really good

@@ -67,11 +67,27 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        gameOverPanelManager.ShowGameOverPanel();
         gameOverPanelManager.UpdateGameOverInfoText(type);
+        ShowGameOverPanelAndEndGame();
+    }
 
+    public void GameOver(string gameOverInfoText)
+    {
+        if (cannotLooseGame)
+        {
+            return;
+        }
+
+        gameOverPanelManager.UpdateGameOverInfoText(gameOverInfoText);
+        ShowGameOverPanelAndEndGame();
+    }
+
+    private void ShowGameOverPanelAndEndGame(){
+        gameOverPanelManager.ShowGameOverPanel();   
         gameUIPanelManager.HideGameUIPanel();
+
         scoreManager.CheckAndSaveHighscore();
+
         enemySpawner.StopSpawning();
         touchInputManager.StopRecognizingTouches();
         enemySpawner.DestroyAllEnemys();

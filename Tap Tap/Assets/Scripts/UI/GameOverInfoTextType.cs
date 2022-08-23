@@ -4,6 +4,7 @@ public enum GameOverInfoTextType
     DontTapEnemyClicked = 1,
     NumberEnemyClickedInWrongOrder = 2,
     EnemyMissed = 3,
-    ReactionBossEnemyClicked = 4,
-    Winning = 5
+    ReactionBossEnemyClickedOnRed = 4,
+    ReactionBossEnemyClickedTooSlow = 5,
+    Winning = 6
 }
