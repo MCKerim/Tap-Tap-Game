@@ -13,7 +13,7 @@ public class WaitTillAllEnemysClearedStage : MonoBehaviour, IStage
     [SerializeField] private float timeBetweenEnemys;
     private float timeTillNextSpawn;
     
-    [SerializeField] private bool isEndless;
+    private bool isEndless;
     private int amountOfWaves;
     [SerializeField] private AmountChances[] amountOfWavesChances;
     private bool isOver;
@@ -21,6 +21,11 @@ public class WaitTillAllEnemysClearedStage : MonoBehaviour, IStage
     private void Start()
     {
         enemySpawnFunctions = GameObject.FindObjectOfType<EnemySpawnFunctions>();
+    }
+
+    public void SetIsEndless(bool isEndless)
+    {
+        this.isEndless = isEndless;
     }
 
     public void Reset()

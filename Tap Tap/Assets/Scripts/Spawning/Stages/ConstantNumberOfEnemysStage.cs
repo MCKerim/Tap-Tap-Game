@@ -7,7 +7,7 @@ public class ConstantNumberOfEnemysStage : MonoBehaviour, IStage
     [SerializeField] private EnemyEntry[] enemys;
     private EnemySpawnFunctions enemySpawnFunctions;
 
-    [SerializeField] private bool isEndless;
+    private bool isEndless;
     private int numberOfEnemysTillOver;
     [SerializeField] private int minNumberOfEnemysTillOver;
     [SerializeField] private int maxNumberOfEnemysTillOver;
@@ -19,6 +19,11 @@ public class ConstantNumberOfEnemysStage : MonoBehaviour, IStage
     private void Start()
     {
         enemySpawnFunctions = GameObject.FindObjectOfType<EnemySpawnFunctions>();
+    }
+
+    public void SetIsEndless(bool isEndless)
+    {
+        this.isEndless = isEndless;
     }
 
     public void Reset()

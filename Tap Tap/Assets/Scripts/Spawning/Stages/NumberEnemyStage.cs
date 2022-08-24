@@ -7,7 +7,7 @@ public class NumberEnemyStage : MonoBehaviour, IStage
     [SerializeField] private GameObject numberEnemyPerfab;
 
     [SerializeField] private AmountChances[] amountChances;
-    [SerializeField] private bool isEndless;
+    private bool isEndless;
 
     private EnemySpawnFunctions enemySpawnFunctions;
 
@@ -17,6 +17,11 @@ public class NumberEnemyStage : MonoBehaviour, IStage
     private void Start()
     {
         enemySpawnFunctions = GameObject.FindObjectOfType<EnemySpawnFunctions>();
+    }
+
+    public void SetIsEndless(bool isEndless)
+    {
+        this.isEndless = isEndless;
     }
 
     public bool IsOver()

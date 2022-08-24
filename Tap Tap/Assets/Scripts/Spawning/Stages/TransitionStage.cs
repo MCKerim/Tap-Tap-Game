@@ -33,6 +33,11 @@ public class TransitionStage : MonoBehaviour, IStage
         touchInputManager = GameObject.FindObjectOfType<TouchInputManager>();
     }
 
+    public void SetIsEndless(bool isEndless)
+    {
+        Debug.LogError("Transition Stage cannot be endless.");
+    }
+
     public bool IsOver()
     {
         return isOver;

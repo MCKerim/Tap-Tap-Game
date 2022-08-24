@@ -29,5 +29,4 @@ public class StageControllerController : MonoBehaviour, IStageController
             g.GetComponent<IStageController>().Reset();
         }
     }
-
 }

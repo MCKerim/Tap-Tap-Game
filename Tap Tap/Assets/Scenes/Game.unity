@@ -251,6 +251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stage: {fileID: 580020178}
+  isEndless: 1
 --- !u!4 &13793078
 Transform:
   m_ObjectHideFlags: 0
@@ -263,7 +264,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 580020180}
-  m_Father: {fileID: 476808288}
+  m_Father: {fileID: 1942332706}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &20259707
@@ -10670,7 +10671,6 @@ MonoBehaviour:
     chance: 10
   - amount: 6
     chance: 1
-  isEndless: 0
 --- !u!1 &196816973
 GameObject:
   m_ObjectHideFlags: 0
@@ -10723,7 +10723,6 @@ MonoBehaviour:
   - amount: 1
     chance: 1
   endScore: 200
-  isEndless: 0
   minSpawnIntervall: 0.5
   maxSpawnIntervall: 2
 --- !u!1 &200538774
@@ -10771,6 +10770,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stage: {fileID: 1632773898}
+  isEndless: 0
 --- !u!1 &231861242
 GameObject:
   m_ObjectHideFlags: 0
@@ -10995,12 +10995,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 252706753}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 936458390}
-  m_Father: {fileID: 476808288}
+  m_Father: {fileID: 1942332706}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &252706755
@@ -11286,6 +11286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stage: {fileID: 467155089}
+  isEndless: 0
 --- !u!1 &348110344
 GameObject:
   m_ObjectHideFlags: 0
@@ -17038,15 +17039,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1575445388}
-  - {fileID: 1364974056}
-  - {fileID: 13793078}
-  - {fileID: 2026547853}
-  - {fileID: 1760035253}
-  - {fileID: 252706754}
-  - {fileID: 637402502}
-  - {fileID: 1083465702}
-  - {fileID: 2084209662}
+  - {fileID: 1942332706}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17267,7 +17260,6 @@ MonoBehaviour:
   - amount: 4
     chance: 10
   timeBetweenEnemys: 0
-  isEndless: 1
   amountOfWavesChances:
   - amount: 2
     chance: 50
@@ -17337,7 +17329,6 @@ MonoBehaviour:
   - amount: 1
     chance: 1
   timeBetweenEnemys: 0
-  isEndless: 1
   amountOfWavesChances: []
 --- !u!1 &507908561
 GameObject:
@@ -17407,6 +17398,9 @@ MonoBehaviour:
     chance: 10
   - stage: {fileID: 179008068}
     chance: 20
+  isEndless: 1
+  minNumberOfStageRounds: 0
+  maxNumberOfStageRounds: 0
 --- !u!1 &538868625
 GameObject:
   m_ObjectHideFlags: 0
@@ -17481,7 +17475,6 @@ MonoBehaviour:
     chance: 20
   - amount: 6
     chance: 5
-  isEndless: 1
 --- !u!4 &547843820
 Transform:
   m_ObjectHideFlags: 0
@@ -17530,7 +17523,6 @@ MonoBehaviour:
     chanceToSpawn: 98
   - enemy: {fileID: 3281439160021067358, guid: 2d26d6813d7fe254490af438928b908f, type: 3}
     chanceToSpawn: 2
-  isEndless: 1
   minNumberOfEnemysTillOver: 10
   maxNumberOfEnemysTillOver: 30
   amountOfConstantEnemysChances:
@@ -17707,7 +17699,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 499219027}
-  m_Father: {fileID: 476808288}
+  m_Father: {fileID: 1942332706}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &637402503
@@ -17723,6 +17715,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stage: {fileID: 499219026}
+  isEndless: 1
 --- !u!1 &651133842
 GameObject:
   m_ObjectHideFlags: 0
@@ -18956,6 +18949,7 @@ MonoBehaviour:
   - {fileID: 1152294580}
   - {fileID: 2019359968}
   - {fileID: 1479993508}
+  isEndless: 0
 --- !u!1 &936458388
 GameObject:
   m_ObjectHideFlags: 0
@@ -18985,7 +18979,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baaac19817d62a74997dcbd3abd2a2c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stage: {fileID: 2078697817}
+  stage: {fileID: 1063301277}
+  isEndless: 1
 --- !u!4 &936458390
 Transform:
   m_ObjectHideFlags: 0
@@ -18996,8 +18991,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2078697819}
+  m_Children: []
   m_Father: {fileID: 252706754}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19209,7 +19203,6 @@ MonoBehaviour:
   - amount: 1
     chance: 1
   endScore: 50
-  isEndless: 0
   minSpawnIntervall: 1
   maxSpawnIntervall: 2
 --- !u!1 &1023568270
@@ -24265,7 +24258,6 @@ MonoBehaviour:
   - amount: 1
     chance: 1
   timeBetweenEnemys: 2
-  isEndless: 0
   amountOfWavesChances:
   - amount: 1
     chance: 1
@@ -24299,6 +24291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stage: {fileID: 547843818}
+  isEndless: 1
 --- !u!4 &1083465702
 Transform:
   m_ObjectHideFlags: 0
@@ -24306,12 +24299,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1083465700}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 547843820}
-  m_Father: {fileID: 476808288}
+  m_Father: {fileID: 1942332706}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1095919242
@@ -24897,7 +24890,6 @@ MonoBehaviour:
   - amount: 1
     chance: 100
   timeBetweenEnemys: 0
-  isEndless: 0
   amountOfWavesChances:
   - amount: 1
     chance: 1
@@ -24955,7 +24947,6 @@ MonoBehaviour:
   - amount: 2
     chance: 20
   endScore: 450
-  isEndless: 0
   minSpawnIntervall: 0.5
   maxSpawnIntervall: 1
 --- !u!1 &1175807584
@@ -25003,6 +24994,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stage: {fileID: 1063301277}
+  isEndless: 0
 --- !u!1 &1240515925
 GameObject:
   m_ObjectHideFlags: 0
@@ -30202,6 +30194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stage: {fileID: 496372526}
+  isEndless: 1
 --- !u!4 &1364974056
 Transform:
   m_ObjectHideFlags: 0
@@ -30214,7 +30207,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 496372527}
-  m_Father: {fileID: 476808288}
+  m_Father: {fileID: 1942332706}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1400025446
@@ -30702,7 +30695,6 @@ MonoBehaviour:
   - amount: 3
     chance: 10
   endScore: 1500
-  isEndless: 0
   minSpawnIntervall: 0.2
   maxSpawnIntervall: 1
 --- !u!1 &1480050373
@@ -31217,65 +31209,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1537424040
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1537424042}
-  - component: {fileID: 1537424041}
-  m_Layer: 0
-  m_Name: Hard Stage Endless
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1537424041
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1537424040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc1c3af6c920d6449a40fc32f224350e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemys:
-  - enemy: {fileID: 3281439160021067358, guid: fcee4adf7d72d2748b85adde1994233b, type: 3}
-    chanceToSpawn: 4
-  - enemy: {fileID: 3281439160021067358, guid: 61fcb92e693b667418bb60772afd4e1c, type: 3}
-    chanceToSpawn: 1
-  - enemy: {fileID: 3281439160021067358, guid: 913729d727518e644b244e1b6ab9e863, type: 3}
-    chanceToSpawn: 0.5
-  amountChances:
-  - amount: 1
-    chance: 80
-  - amount: 2
-    chance: 20
-  endScore: 800
-  isEndless: 1
-  minSpawnIntervall: 0.5
-  maxSpawnIntervall: 1
---- !u!4 &1537424042
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1537424040}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1760035253}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1553515852
 GameObject:
   m_ObjectHideFlags: 0
@@ -31434,7 +31367,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1575445387}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -31443,7 +31376,7 @@ Transform:
   - {fileID: 1175807585}
   - {fileID: 200538775}
   - {fileID: 507908562}
-  m_Father: {fileID: 476808288}
+  m_Father: {fileID: 1942332706}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1575445389
@@ -31514,7 +31447,6 @@ MonoBehaviour:
   - amount: 5
     chance: 1
   timeBetweenEnemys: 0
-  isEndless: 0
   amountOfWavesChances:
   - amount: 1
     chance: 1
@@ -32171,7 +32103,6 @@ MonoBehaviour:
   - amount: 30
     chance: 1
   timeBetweenEnemys: 1.5
-  isEndless: 1
   amountOfWavesChances: []
 --- !u!1 &1760035251
 GameObject:
@@ -32184,7 +32115,7 @@ GameObject:
   - component: {fileID: 1760035253}
   - component: {fileID: 1760035252}
   m_Layer: 0
-  m_Name: Only Hard Mode
+  m_Name: Only Extreme Mode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32202,7 +32133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baaac19817d62a74997dcbd3abd2a2c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stage: {fileID: 1537424040}
+  stage: {fileID: 1479993508}
+  isEndless: 1
 --- !u!4 &1760035253
 Transform:
   m_ObjectHideFlags: 0
@@ -32210,12 +32142,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1760035251}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1537424042}
-  m_Father: {fileID: 476808288}
+  m_Children: []
+  m_Father: {fileID: 1942332706}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1764803756
@@ -37879,6 +37810,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1937577058}
   m_CullTransparentMesh: 1
+--- !u!1 &1942332705
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1942332706}
+  m_Layer: 0
+  m_Name: Old Modes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1942332706
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942332705}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1575445388}
+  - {fileID: 1364974056}
+  - {fileID: 13793078}
+  - {fileID: 2026547853}
+  - {fileID: 1760035253}
+  - {fileID: 252706754}
+  - {fileID: 637402502}
+  - {fileID: 1083465702}
+  - {fileID: 2084209662}
+  m_Father: {fileID: 476808288}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1946616354
 GameObject:
   m_ObjectHideFlags: 0
@@ -43089,7 +43059,6 @@ MonoBehaviour:
   - amount: 2
     chance: 20
   endScore: 800
-  isEndless: 0
   minSpawnIntervall: 0.5
   maxSpawnIntervall: 1
 --- !u!1 &2026547851
@@ -43125,7 +43094,9 @@ MonoBehaviour:
   - {fileID: 1013860245}
   - {fileID: 196816973}
   - {fileID: 1152294580}
-  - {fileID: 1537424040}
+  - {fileID: 2019359968}
+  - {fileID: 1479993508}
+  isEndless: 1
 --- !u!4 &2026547853
 Transform:
   m_ObjectHideFlags: 0
@@ -43133,11 +43104,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2026547851}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 476808288}
+  m_Father: {fileID: 1942332706}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2070860129
@@ -43311,60 +43282,6 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
---- !u!1 &2078697817
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2078697819}
-  - component: {fileID: 2078697818}
-  m_Layer: 0
-  m_Name: Boss Stage
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2078697818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2078697817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79a145dae6146b442ac4407ca74b4b60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemys:
-  - enemy: {fileID: 3281439160021067358, guid: 2c6b42347ddd63546ab3324729a18655, type: 3}
-    chanceToSpawn: 1
-  - enemy: {fileID: 7550616134950662651, guid: 71414e4df49509142aaf3641ddc65873, type: 3}
-    chanceToSpawn: 1
-  amountOfEnemysChances:
-  - amount: 1
-    chance: 1
-  timeBetweenEnemys: 2
-  isEndless: 1
-  amountOfWavesChances: []
---- !u!4 &2078697819
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2078697817}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6626137, y: 0.5847075, z: 3.6786268}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 936458390}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2084209660
 GameObject:
   m_ObjectHideFlags: 0
@@ -43395,6 +43312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stage: {fileID: 1754370048}
+  isEndless: 1
 --- !u!4 &2084209662
 Transform:
   m_ObjectHideFlags: 0
@@ -43402,12 +43320,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2084209660}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1754370049}
-  m_Father: {fileID: 476808288}
+  m_Father: {fileID: 1942332706}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2120329931

@@ -6,7 +6,15 @@ using System;
 public class RandomStageController : MonoBehaviour, IStageController
 {
     [SerializeField] private StageEntry[] stages;
+
+    //NOT IMPLEMENTET YET
+    [SerializeField] private bool isEndless;
     private EnemySpawnFunctions enemySpawnFunctions;
+
+    [SerializeField] private int minNumberOfStageRounds;
+    [SerializeField] private int maxNumberOfStageRounds;
+    private int currentStageRoundsLeft;
+    private bool isOver;
 
     private void Start()
     {
@@ -15,17 +23,33 @@ public class RandomStageController : MonoBehaviour, IStageController
 
     public IStage GetStage()
     {
+        if(!isEndless){
+            if(currentStageRoundsLeft-1 > 0){
+                currentStageRoundsLeft--;
+            }else{
+                isOver = true;
+            }
+        }
+
         return enemySpawnFunctions.GetRandomStage(stages).GetComponent<IStage>();
     }
 
     public bool IsOver()
     {
-        return false;
+        return isOver;
     }
 
     public void Reset()
     {
-        
+        currentStageRoundsLeft = UnityEngine.Random.Range(minNumberOfStageRounds, maxNumberOfStageRounds + 1);
+
+        foreach(StageEntry stageEntry in stages){
+            stageEntry.stage.GetComponent<IStage>().SetIsEndless(false);
+        }
+
+        isOver = false;
+
+        Debug.Log("Number; " + currentStageRoundsLeft);
     }
 }
 

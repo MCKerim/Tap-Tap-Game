@@ -17,12 +17,17 @@ public class TimerStage : MonoBehaviour, IStage
     [SerializeField] private float minTimeStageEnds;
     [SerializeField] private float maxTimeStageEnds;
     private float timeTillStageIsOver;
+    private bool isEndless;
 
     private bool isOver;
 
     private void Start()
     {
         settings = GameObject.FindObjectOfType<EnemySpawnFunctions>();
+    }
+
+    public void SetIsEndless(bool isEndless){
+        this.isEndless = isEndless;
     }
 
     public bool IsOver()
@@ -39,12 +44,16 @@ public class TimerStage : MonoBehaviour, IStage
 
     public void UpdateStage()
     {
-        if(!isOver && timeTillStageIsOver <= 0)
+        if(!isOver && timeTillStageIsOver <= 0 && !isEndless)
         {
             isOver = true;
             return;
         }
-        timeTillStageIsOver -= Time.deltaTime;
+
+        if(!isEndless){
+            timeTillStageIsOver -= Time.deltaTime;
+        }
+        
 
         if (timeTillNextSpawn <= 0)
         {

@@ -12,7 +12,7 @@ public class PointsStage : MonoBehaviour, IStage
     [SerializeField] private AmountChances[] amountChances;
 
     [SerializeField] private int endScore;
-    [SerializeField] private bool isEndless;
+    private bool isEndless;
 
     [SerializeField] private float minSpawnIntervall;
     [SerializeField] private float maxSpawnIntervall;
@@ -23,6 +23,11 @@ public class PointsStage : MonoBehaviour, IStage
     {
         settings = GameObject.FindObjectOfType<EnemySpawnFunctions>();
         scoreManager = GameObject.FindObjectOfType<ScoreManager>();
+    }
+
+    public void SetIsEndless(bool isEndless)
+    {
+        this.isEndless = isEndless;
     }
 
     public void Reset()
