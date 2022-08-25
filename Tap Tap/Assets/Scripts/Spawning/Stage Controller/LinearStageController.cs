@@ -7,8 +7,13 @@ public class LinearStageController : MonoBehaviour, IStageController
 
     [SerializeField] private GameObject[] stages;
     [SerializeField] private bool isEndless;
-
+    [SerializeField] private bool playerIsNotAllowedToMiss;
+    private TouchInputManager touchInputManager;
     private int nextStage;
+
+    private void Start() {
+        touchInputManager = GameObject.FindObjectOfType<TouchInputManager>();
+    }
 
     public void Reset()
     {
@@ -18,6 +23,8 @@ public class LinearStageController : MonoBehaviour, IStageController
             stage.GetComponent<IStage>().SetIsEndless(false);
         }
         stages[stages.Length-1].GetComponent<IStage>().SetIsEndless(isEndless);
+
+        touchInputManager.SetAllowedToMiss(!playerIsNotAllowedToMiss);
     }
 
     public IStage GetStage()

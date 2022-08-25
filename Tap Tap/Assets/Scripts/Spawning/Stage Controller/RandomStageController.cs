@@ -13,12 +13,16 @@ public class RandomStageController : MonoBehaviour, IStageController
 
     [SerializeField] private int minNumberOfStageRounds;
     [SerializeField] private int maxNumberOfStageRounds;
+    [SerializeField] private bool playerIsNotAllowedToMiss;
+    private TouchInputManager touchInputManager;
+
     private int currentStageRoundsLeft;
     private bool isOver;
 
     private void Start()
     {
         enemySpawnFunctions = GameObject.FindObjectOfType<EnemySpawnFunctions>();
+        touchInputManager = GameObject.FindObjectOfType<TouchInputManager>();
     }
 
     public IStage GetStage()
@@ -49,7 +53,7 @@ public class RandomStageController : MonoBehaviour, IStageController
 
         isOver = false;
 
-        Debug.Log("Number; " + currentStageRoundsLeft);
+        touchInputManager.SetAllowedToMiss(!playerIsNotAllowedToMiss);
     }
 }
 
