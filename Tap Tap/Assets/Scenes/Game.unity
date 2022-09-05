@@ -31802,6 +31802,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e2380d6d9da211409bc0aa4fdef26c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pausedSnapshot: {fileID: -199162683393782897, guid: 72886273b345c964b83d052619eda447, type: 2}
+  unPausedSnapshot: {fileID: 483536739892914826, guid: 72886273b345c964b83d052619eda447, type: 2}
   debugInfoObjects:
   - {fileID: 368487191}
   - {fileID: 668663778}

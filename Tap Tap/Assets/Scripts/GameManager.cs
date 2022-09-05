@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.Audio;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class GameManager : MonoBehaviour
 
     private TouchInputManager touchInputManager;
 
+    [SerializeField] private AudioMixerSnapshot pausedSnapshot;
+    [SerializeField] private AudioMixerSnapshot unPausedSnapshot;
     [SerializeField] private GameObject[] debugInfoObjects;
 
     [SerializeField] private TextMeshProUGUI timerUntilResumeText;
@@ -111,6 +114,7 @@ public class GameManager : MonoBehaviour
             pausePanelManager.ShowPausePanel();
             gameUIPanelManager.HideGameUIPanel();
             Time.timeScale = 0;
+            pausedSnapshot.TransitionTo(0.01f);
         }
     }
 
@@ -120,6 +124,7 @@ public class GameManager : MonoBehaviour
         {
             isPaused = false;
             StartCoroutine(TimeUntilResumeTimer());
+            unPausedSnapshot.TransitionTo(0.01f);
         }
     }
 
