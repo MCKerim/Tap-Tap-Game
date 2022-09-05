@@ -19,6 +19,8 @@ public class ScoreManager : MonoBehaviour
     private EnemySpawner enemySpawner;
     private string currentModeName;
 
+    [SerializeField] private AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -85,6 +87,7 @@ public class ScoreManager : MonoBehaviour
             if (!highscoreParticles[index].isPlaying)
             {
                 highscoreParticles[index].Play();
+                audioSource.Play();
             }
 
             yield return new WaitForSeconds(Random.Range(0f, 1f));
