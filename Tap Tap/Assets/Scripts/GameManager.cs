@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
 
     private bool isPaused;
 
+    [SerializeField] private float backgroundMusicPauseTransitionTime;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -113,8 +115,8 @@ public class GameManager : MonoBehaviour
             touchInputManager.StopRecognizingTouches();
             pausePanelManager.ShowPausePanel();
             gameUIPanelManager.HideGameUIPanel();
+            pausedSnapshot.TransitionTo(backgroundMusicPauseTransitionTime);
             Time.timeScale = 0;
-            pausedSnapshot.TransitionTo(0.01f);
         }
     }
 
@@ -124,12 +126,11 @@ public class GameManager : MonoBehaviour
         {
             isPaused = false;
             StartCoroutine(TimeUntilResumeTimer());
-            unPausedSnapshot.TransitionTo(0.01f);
         }
     }
 
 
-    [SerializeField] private float timer;
+    [SerializeField] private float countdownTime;
     [SerializeField] private LeanTweenType easeType;
 
     IEnumerator TimeUntilResumeTimer()
@@ -138,13 +139,16 @@ public class GameManager : MonoBehaviour
         Vector3 startScale = timerUntilResumeText.transform.localScale;
         Vector3 targetScale = new Vector3(startScale.x - 0.5f, startScale.y - 0.5f, startScale.z - 0.5f);
 
-        for(int seconds = 3; seconds > 0; seconds--)
+        int countdownStart = 3;
+        unPausedSnapshot.TransitionTo(countdownStart * countdownTime);
+
+        for(int i = countdownStart; i > 0; i--)
         {
-            timerUntilResumeText.SetText(seconds + "");
+            timerUntilResumeText.SetText(i + "");
 
-            LeanTween.scale(timerUntilResumeText.gameObject, targetScale, timer).setIgnoreTimeScale(true).setEase(easeType);
+            LeanTween.scale(timerUntilResumeText.gameObject, targetScale, countdownTime).setIgnoreTimeScale(true).setEase(easeType);
 
-            yield return new WaitForSecondsRealtime(timer);
+            yield return new WaitForSecondsRealtime(countdownTime);
 
             LeanTween.scale(timerUntilResumeText.gameObject, startScale, 0).setIgnoreTimeScale(true);
         }

@@ -35,7 +35,7 @@ public class TransitionStage : MonoBehaviour, IStage
 
     public void SetIsEndless(bool isEndless)
     {
-        Debug.LogError("Transition Stage cannot be endless.");
+
     }
 
     public bool IsOver()

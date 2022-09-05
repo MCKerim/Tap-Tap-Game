@@ -22,6 +22,8 @@ public class TouchInputManager : MonoBehaviour
 
     [SerializeField] private GameObject tapParticle;
 
+    [SerializeField] private AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -77,6 +79,7 @@ public class TouchInputManager : MonoBehaviour
             if(touch.phase == TouchPhase.Began)
             {
                 Instantiate(tapParticle, new Vector3(touchPosWorld2D.x, touchPosWorld2D.y, 10), Quaternion.identity);
+                audioSource.Play();
             }
 
             if (hitInformation.collider != null)
@@ -112,8 +115,8 @@ public class TouchInputManager : MonoBehaviour
                 }
             }
         }
-
-        foreach (GameObject touchedObject in holdingTouchingObjects)
+       
+        foreach (GameObject touchedObject in holdingTouchingObjects.ToArray())
         {
             if (touchedObject != null && !currentFrameTouchingObjects.Contains(touchedObject))
             {
