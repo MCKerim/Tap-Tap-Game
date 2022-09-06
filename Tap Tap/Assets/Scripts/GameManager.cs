@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
     {
         scoreManager.Reset();
         touchInputManager.StartRecognizingTouches();
-        LeanTween.delayedCall(1f, enemySpawner.StartSpawner);
+        enemySpawner.StartSpawner(1f);
     }
 
     public void SelectModeAndStartGame(string mode)
@@ -88,14 +88,16 @@ public class GameManager : MonoBehaviour
     }
 
     private void ShowGameOverPanelAndEndGame(){
-        gameOverPanelManager.ShowGameOverPanel();   
-        gameUIPanelManager.HideGameUIPanel();
-
-        scoreManager.CheckAndSaveHighscore();
-
         enemySpawner.StopSpawning();
         touchInputManager.StopRecognizingTouches();
         enemySpawner.DestroyAllEnemys();
+
+        if(scoreManager.CheckAndSaveHighscore()){
+            gameOverPanelManager.UpdateGameOverInfoText("New Highscore!");
+        }
+
+        gameOverPanelManager.ShowGameOverPanel();   
+        gameUIPanelManager.HideGameUIPanel();
     }
 
     public void ShowDebugInfo(bool show)

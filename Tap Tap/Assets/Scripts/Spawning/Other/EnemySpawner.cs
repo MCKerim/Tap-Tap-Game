@@ -113,12 +113,19 @@ public class EnemySpawner : MonoBehaviour
     public void StopSpawning()
     {
         isSpawning = false;
+        StopAllCoroutines();
     }
 
-    public void StartSpawner()
+    public void StartSpawner(float delay)
     {
         currentStageController.Reset();
         ChangeStage();
+        StartCoroutine(delayedStart(delay));
+    }
+
+    IEnumerator delayedStart(float delay)
+    {
+        yield return new WaitForSeconds(delay);
         isSpawning = true;
     }
 }

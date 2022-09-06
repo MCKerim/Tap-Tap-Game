@@ -50,14 +50,18 @@ public class ScoreManager : MonoBehaviour
         return highscore;
     }
 
-    public void CheckAndSaveHighscore()
+    public bool CheckAndSaveHighscore()
     {
+        bool newHighscore = false;
         if (score > highscore)
         {
+            newHighscore = true;
             highscore = score;
             PlayerPrefs.SetInt(currentModeName, highscore);
             StartCoroutine(PlayHighscoreParticles());
         }
+
+        return newHighscore;
     }
 
     public void Reset()
@@ -89,7 +93,6 @@ public class ScoreManager : MonoBehaviour
                 highscoreParticles[index].Play();
                 audioSource.Play();
             }
-
             yield return new WaitForSeconds(Random.Range(0f, 1f));
         }
     }

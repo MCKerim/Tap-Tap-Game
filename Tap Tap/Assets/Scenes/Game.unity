@@ -17447,7 +17447,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 476808288}
-  - component: {fileID: 476808287}
   - component: {fileID: 476808289}
   m_Layer: 0
   m_Name: Enemy Spawner
@@ -17456,232 +17455,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &476808287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 476808286}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8136c7dcb4c6584a93b269fe8ec3688, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnField: {fileID: 1491375938}
-  marginLeft: 0.2
-  marginRight: 0.2
-  marginTop: 1
-  marginBottom: 0.2
-  difficultyStages:
-  - name: Low Difficulty
-    fromScore: 1000
-    minSecInEndlessMode: 0
-    maxSecInEndlessMode: 0
-    intervallMin: 1
-    intervallMax: 2.5
-    chanceToSpawnMoreEnemysThanMin: 0
-    minNumberOfEnemysToSpawn: 1
-    maxNumberOfEnemysToSpawn: 1
-    enemys:
-    - enemy: {fileID: 3281439160021067358, guid: fcee4adf7d72d2748b85adde1994233b, type: 3}
-      chanceToSpawn: 1
-  - name: Easy Difficulty
-    fromScore: 50
-    minSecInEndlessMode: 0
-    maxSecInEndlessMode: 0
-    intervallMin: 1
-    intervallMax: 2
-    chanceToSpawnMoreEnemysThanMin: 0
-    minNumberOfEnemysToSpawn: 1
-    maxNumberOfEnemysToSpawn: 1
-    enemys:
-    - enemy: {fileID: 3281439160021067358, guid: fcee4adf7d72d2748b85adde1994233b, type: 3}
-      chanceToSpawn: 2
-    - enemy: {fileID: 3281439160021067358, guid: 61fcb92e693b667418bb60772afd4e1c, type: 3}
-      chanceToSpawn: 1
-  - name: Medium Difficulty
-    fromScore: 200
-    minSecInEndlessMode: 0
-    maxSecInEndlessMode: 0
-    intervallMin: 0.5
-    intervallMax: 2
-    chanceToSpawnMoreEnemysThanMin: 0.25
-    minNumberOfEnemysToSpawn: 1
-    maxNumberOfEnemysToSpawn: 2
-    enemys:
-    - enemy: {fileID: 3281439160021067358, guid: fcee4adf7d72d2748b85adde1994233b, type: 3}
-      chanceToSpawn: 3
-    - enemy: {fileID: 3281439160021067358, guid: 61fcb92e693b667418bb60772afd4e1c, type: 3}
-      chanceToSpawn: 1
-    - enemy: {fileID: 3281439160021067358, guid: 913729d727518e644b244e1b6ab9e863, type: 3}
-      chanceToSpawn: 0.5
-  - name: Hard Difficulty
-    fromScore: 450
-    minSecInEndlessMode: 0
-    maxSecInEndlessMode: 0
-    intervallMin: 0.5
-    intervallMax: 1.5
-    chanceToSpawnMoreEnemysThanMin: 0.25
-    minNumberOfEnemysToSpawn: 1
-    maxNumberOfEnemysToSpawn: 3
-    enemys:
-    - enemy: {fileID: 3281439160021067358, guid: fcee4adf7d72d2748b85adde1994233b, type: 3}
-      chanceToSpawn: 3
-    - enemy: {fileID: 3281439160021067358, guid: 61fcb92e693b667418bb60772afd4e1c, type: 3}
-      chanceToSpawn: 1
-    - enemy: {fileID: 3281439160021067358, guid: 913729d727518e644b244e1b6ab9e863, type: 3}
-      chanceToSpawn: 0.5
-    - enemy: {fileID: 3281439160021067358, guid: b7d8b2bfbac323e46acabff6fc2dc1ac, type: 3}
-      chanceToSpawn: 0.5
-  - name: Extrem Difficulty
-    fromScore: 750
-    minSecInEndlessMode: 0
-    maxSecInEndlessMode: 0
-    intervallMin: 0.25
-    intervallMax: 1
-    chanceToSpawnMoreEnemysThanMin: 0.25
-    minNumberOfEnemysToSpawn: 1
-    maxNumberOfEnemysToSpawn: 3
-    enemys:
-    - enemy: {fileID: 3281439160021067358, guid: fcee4adf7d72d2748b85adde1994233b, type: 3}
-      chanceToSpawn: 3
-    - enemy: {fileID: 3281439160021067358, guid: 61fcb92e693b667418bb60772afd4e1c, type: 3}
-      chanceToSpawn: 1
-    - enemy: {fileID: 3281439160021067358, guid: 913729d727518e644b244e1b6ab9e863, type: 3}
-      chanceToSpawn: 0.5
-    - enemy: {fileID: 3281439160021067358, guid: b7d8b2bfbac323e46acabff6fc2dc1ac, type: 3}
-      chanceToSpawn: 0.5
-  scoreForEndlessMode: 1200
-  difficultyStagesEndlessMode:
-  - name: E1
-    fromScore: 0
-    minSecInEndlessMode: 3
-    maxSecInEndlessMode: 10
-    intervallMin: 0.5
-    intervallMax: 0.5
-    chanceToSpawnMoreEnemysThanMin: 0
-    minNumberOfEnemysToSpawn: 1
-    maxNumberOfEnemysToSpawn: 1
-    enemys:
-    - enemy: {fileID: 3281439160021067358, guid: fcee4adf7d72d2748b85adde1994233b, type: 3}
-      chanceToSpawn: 1
-  - name: E2
-    fromScore: 0
-    minSecInEndlessMode: 3
-    maxSecInEndlessMode: 10
-    intervallMin: 0.5
-    intervallMax: 0.5
-    chanceToSpawnMoreEnemysThanMin: 0
-    minNumberOfEnemysToSpawn: 2
-    maxNumberOfEnemysToSpawn: 2
-    enemys:
-    - enemy: {fileID: 3281439160021067358, guid: fcee4adf7d72d2748b85adde1994233b, type: 3}
-      chanceToSpawn: 1
-    - enemy: {fileID: 3281439160021067358, guid: b7d8b2bfbac323e46acabff6fc2dc1ac, type: 3}
-      chanceToSpawn: 1
-  - name: E3
-    fromScore: 0
-    minSecInEndlessMode: 3
-    maxSecInEndlessMode: 10
-    intervallMin: 0.5
-    intervallMax: 0.5
-    chanceToSpawnMoreEnemysThanMin: 0
-    minNumberOfEnemysToSpawn: 1
-    maxNumberOfEnemysToSpawn: 1
-    enemys:
-    - enemy: {fileID: 3281439160021067358, guid: 61fcb92e693b667418bb60772afd4e1c, type: 3}
-      chanceToSpawn: 1
-  - name: E4
-    fromScore: 0
-    minSecInEndlessMode: 3
-    maxSecInEndlessMode: 10
-    intervallMin: 0.5
-    intervallMax: 1
-    chanceToSpawnMoreEnemysThanMin: 0.25
-    minNumberOfEnemysToSpawn: 1
-    maxNumberOfEnemysToSpawn: 3
-    enemys:
-    - enemy: {fileID: 3281439160021067358, guid: fcee4adf7d72d2748b85adde1994233b, type: 3}
-      chanceToSpawn: 3
-    - enemy: {fileID: 3281439160021067358, guid: fcee4adf7d72d2748b85adde1994233b, type: 3}
-      chanceToSpawn: 1
-    - enemy: {fileID: 3281439160021067358, guid: 913729d727518e644b244e1b6ab9e863, type: 3}
-      chanceToSpawn: 0.5
-    - enemy: {fileID: 3281439160021067358, guid: b7d8b2bfbac323e46acabff6fc2dc1ac, type: 3}
-      chanceToSpawn: 0.5
-  - name: E5
-    fromScore: 0
-    minSecInEndlessMode: 3
-    maxSecInEndlessMode: 10
-    intervallMin: 0.5
-    intervallMax: 1
-    chanceToSpawnMoreEnemysThanMin: 0.25
-    minNumberOfEnemysToSpawn: 1
-    maxNumberOfEnemysToSpawn: 3
-    enemys:
-    - enemy: {fileID: 3281439160021067358, guid: fcee4adf7d72d2748b85adde1994233b, type: 3}
-      chanceToSpawn: 3
-    - enemy: {fileID: 3281439160021067358, guid: fcee4adf7d72d2748b85adde1994233b, type: 3}
-      chanceToSpawn: 1
-    - enemy: {fileID: 3281439160021067358, guid: 913729d727518e644b244e1b6ab9e863, type: 3}
-      chanceToSpawn: 0.5
-    - enemy: {fileID: 3281439160021067358, guid: b7d8b2bfbac323e46acabff6fc2dc1ac, type: 3}
-      chanceToSpawn: 0.5
-  - name: E6
-    fromScore: 0
-    minSecInEndlessMode: 3
-    maxSecInEndlessMode: 10
-    intervallMin: 1
-    intervallMax: 2
-    chanceToSpawnMoreEnemysThanMin: 0.25
-    minNumberOfEnemysToSpawn: 1
-    maxNumberOfEnemysToSpawn: 3
-    enemys:
-    - enemy: {fileID: 3281439160021067358, guid: fcee4adf7d72d2748b85adde1994233b, type: 3}
-      chanceToSpawn: 3
-  - name: E7
-    fromScore: 0
-    minSecInEndlessMode: 3
-    maxSecInEndlessMode: 10
-    intervallMin: 0.5
-    intervallMax: 0.75
-    chanceToSpawnMoreEnemysThanMin: 0
-    minNumberOfEnemysToSpawn: 2
-    maxNumberOfEnemysToSpawn: 2
-    enemys:
-    - enemy: {fileID: 3281439160021067358, guid: fcee4adf7d72d2748b85adde1994233b, type: 3}
-      chanceToSpawn: 3
-  - name: E8
-    fromScore: 0
-    minSecInEndlessMode: 3
-    maxSecInEndlessMode: 10
-    intervallMin: 0.75
-    intervallMax: 1.25
-    chanceToSpawnMoreEnemysThanMin: 0.5
-    minNumberOfEnemysToSpawn: 1
-    maxNumberOfEnemysToSpawn: 3
-    enemys:
-    - enemy: {fileID: 3281439160021067358, guid: fcee4adf7d72d2748b85adde1994233b, type: 3}
-      chanceToSpawn: 1.25
-    - enemy: {fileID: 3281439160021067358, guid: 913729d727518e644b244e1b6ab9e863, type: 3}
-      chanceToSpawn: 1
-  - name: E9
-    fromScore: 0
-    minSecInEndlessMode: 3
-    maxSecInEndlessMode: 10
-    intervallMin: 0.5
-    intervallMax: 0.75
-    chanceToSpawnMoreEnemysThanMin: 0.25
-    minNumberOfEnemysToSpawn: 1
-    maxNumberOfEnemysToSpawn: 2
-    enemys:
-    - enemy: {fileID: 3281439160021067358, guid: fcee4adf7d72d2748b85adde1994233b, type: 3}
-      chanceToSpawn: 1
-    - enemy: {fileID: 3281439160021067358, guid: b7d8b2bfbac323e46acabff6fc2dc1ac, type: 3}
-      chanceToSpawn: 4
-  currentStageNameText: {fileID: 368487194}
-  timeUntilNextStageText: {fileID: 668663780}
 --- !u!4 &476808288
 Transform:
   m_ObjectHideFlags: 0
@@ -18394,7 +18167,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 50.400024}
+  m_AnchoredPosition: {x: 0, y: 50.399902}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &588791900
@@ -25910,7 +25683,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1124960036}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c15daeda1fb7f2b41be2fcc2187e6798, type: 3}
   m_Name: 
